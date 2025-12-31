@@ -1,4 +1,4 @@
-# 🎯 Library Recommendation System
+# Library Recommendation System
 
 AI-powered serverless library book recommendation system built with React, TypeScript, AWS Lambda, DynamoDB, Amazon Cognito, and Amazon Bedrock.
 
@@ -6,21 +6,19 @@ AI-powered serverless library book recommendation system built with React, TypeS
 
 ---
 
-## 🌐 Live Application
+##  Live Application
 
 **Production URLs:**
-
-- 🚀 **CloudFront (CDN - Recommended):** https://d136xpllx0av0s.cloudfront.net
-- 📦 **S3 Direct:** https://library-app-frontend-hacicakin.s3.us-east-1.amazonaws.com/index.html
+-  **CloudFront (CDN - Recommended):** https://d136xpllx0av0s.cloudfront.net
+-  **S3 Direct:** https://library-app-frontend-hacicakin.s3.us-east-1.amazonaws.com/index.html
 
 **GitHub Repository:** https://github.com/hcakn/aws_library_project
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🎨 Frontend
-
+###  Frontend
 - **Modern React 19** with TypeScript
 - **Tailwind CSS** for responsive design
 - **Animated landing page** with gradient effects
@@ -29,8 +27,7 @@ AI-powered serverless library book recommendation system built with React, TypeS
 - **AI-Powered Recommendations** - Get personalized book suggestions
 - **Admin Dashboard** - Manage books (role-based access)
 
-### ⚙️ Backend (AWS Serverless)
-
+###  Backend (AWS Serverless)
 - **11 Lambda Functions** (Node.js 20.x, ARM64)
   - Books API (GET, GET by ID)
   - Reading Lists API (GET, CREATE, UPDATE, DELETE)
@@ -44,8 +41,7 @@ AI-powered serverless library book recommendation system built with React, TypeS
 - **Amazon Cognito** - User authentication + admin roles
 - **Amazon Bedrock** - AI recommendations (Claude 3 Haiku)
 
-### 🚀 DevOps
-
+###  DevOps
 - **S3 Static Website Hosting**
 - **CloudFront CDN** - Global content delivery
 - **CI/CD Pipeline** - AWS CodePipeline + GitHub integration
@@ -53,8 +49,7 @@ AI-powered serverless library book recommendation system built with React, TypeS
 
 ---
 
-## 🏗️ Architecture
-
+##  Architecture
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                         Users                                │
@@ -102,19 +97,17 @@ AI-powered serverless library book recommendation system built with React, TypeS
 
 ---
 
-## 🎯 API Endpoints
+##  API Endpoints
 
-**Base URL:** `https://ups86wch5d.execute-api.us-east-1.amazonaws.com/dev`
+**Base URL:** `https://YOUR-API-ID.execute-api.REGION.amazonaws.com/STAGE`
 
 ### Public Endpoints
-
 - `GET /books` - List all books
 - `GET /books/{id}` - Get book details
 - `GET /books/{id}/reviews` - Get book reviews
 - `GET /hello` - Health check
 
 ### Protected Endpoints (Requires Authentication)
-
 - `POST /books/{id}/reviews` - Create review
 - `GET /reading-lists?userId={userId}` - Get user's reading lists
 - `POST /reading-lists` - Create reading list
@@ -124,10 +117,9 @@ AI-powered serverless library book recommendation system built with React, TypeS
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
-
 - **React 19** - UI library
 - **TypeScript 5** - Type safety
 - **Vite** - Build tool
@@ -136,7 +128,6 @@ AI-powered serverless library book recommendation system built with React, TypeS
 - **AWS Amplify** - Cognito integration
 
 ### Backend
-
 - **AWS Lambda** - Serverless compute
 - **Amazon DynamoDB** - NoSQL database
 - **Amazon API Gateway** - REST API
@@ -145,7 +136,6 @@ AI-powered serverless library book recommendation system built with React, TypeS
 - **AWS SDK v3** - AWS service integration
 
 ### DevOps
-
 - **Amazon S3** - Static hosting
 - **Amazon CloudFront** - CDN
 - **AWS CodePipeline** - CI/CD
@@ -154,16 +144,14 @@ AI-powered serverless library book recommendation system built with React, TypeS
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
-
 - Node.js 20+
 - AWS Account
 - Git
 
 ### Local Development
-
 ```bash
 # Clone repository
 git clone https://github.com/hcakn/aws_library_project.git
@@ -172,13 +160,13 @@ cd aws_library_project
 # Install dependencies
 npm install
 
-# Create .env file
-cat > .env << EOF
-VITE_API_BASE_URL=https://ups86wch5d.execute-api.us-east-1.amazonaws.com/dev
-VITE_AWS_REGION=us-east-1
-VITE_COGNITO_USER_POOL_ID=us-east-1_WzPzFnM91
-VITE_COGNITO_CLIENT_ID=6fq554dvi55jgsnqmc3m24u2r1
-EOF
+# Copy environment template and configure with your AWS credentials
+cp .env.example .env
+# Edit .env file with your AWS values:
+# - VITE_API_BASE_URL (your API Gateway URL)
+# - VITE_AWS_REGION (e.g., us-east-1)
+# - VITE_COGNITO_USER_POOL_ID (your Cognito User Pool ID)
+# - VITE_COGNITO_CLIENT_ID (your Cognito App Client ID)
 
 # Start development server
 npm run dev
@@ -187,7 +175,6 @@ npm run dev
 ```
 
 ### Build for Production
-
 ```bash
 npm run build
 # Output: dist/ directory
@@ -195,7 +182,7 @@ npm run build
 
 ---
 
-## 📊 Project Statistics
+##  Project Statistics
 
 - **Total Development Time:** ~16 hours (4-week intensive)
 - **Lines of Code:** ~3,500+
@@ -207,36 +194,31 @@ npm run build
 
 ---
 
-## 🔐 Authentication
+##  Authentication
 
 ### User Roles
-
 - **User:** Can browse books, create reading lists, write reviews, get AI recommendations
 - **Admin:** All user permissions + manage books (create/edit/delete)
 
 ### Admin Access
-
 To create an admin user:
-
-1. Sign up normally
-2. AWS Console → Cognito → User Pools → library-users → Groups
+1. Sign up normally through the application
+2. AWS Console → Cognito → User Pools → [Your User Pool] → Groups
 3. Add user to "Admins" group
 
 ---
 
-## 🤖 AI Recommendations
+##  AI Recommendations
 
 Powered by **Amazon Bedrock (Claude 3 Haiku)**
 
 **Example Query:**
-
 ```
 Genre: Science Fiction
 Limit: 3 books
 ```
 
 **AI Response:**
-
 ```json
 {
   "recommendations": [
@@ -254,27 +236,26 @@ Limit: 3 books
 
 ---
 
-## 💰 AWS Cost Breakdown
+##  AWS Cost Breakdown
 
 **Monthly Cost (Production):** ~$0.05 - $2.00
 
-| Service     | Usage               | Cost             |
-| ----------- | ------------------- | ---------------- |
-| Lambda      | 1M requests/month   | Free Tier        |
-| DynamoDB    | On-demand, <1GB     | Free Tier        |
-| API Gateway | 1M requests/month   | Free Tier        |
-| Cognito     | <50K MAU            | Free Tier        |
-| S3          | <5GB storage        | Free Tier        |
-| CloudFront  | <1TB transfer       | Free Tier        |
-| Bedrock     | ~100 requests/month | ~$0.05           |
-| **Total**   |                     | **~$0.05/month** |
+| Service | Usage | Cost |
+|---------|-------|------|
+| Lambda | 1M requests/month | Free Tier |
+| DynamoDB | On-demand, <1GB | Free Tier |
+| API Gateway | 1M requests/month | Free Tier |
+| Cognito | <50K MAU | Free Tier |
+| S3 | <5GB storage | Free Tier |
+| CloudFront | <1TB transfer | Free Tier |
+| Bedrock | ~100 requests/month | ~$0.05 |
+| **Total** | | **~$0.05/month** |
 
-✅ **Stays within Free Tier for student usage!**
+ **Stays within Free Tier for student usage!**
 
 ---
 
-## 📁 Project Structure
-
+##  Project Structure
 ```
 aws_library_project/
 ├── public/
@@ -299,6 +280,7 @@ aws_library_project/
 │   ├── utils/                # Helper functions
 │   └── main.tsx              # App entry point
 ├── buildspec.yml             # CodeBuild configuration
+├── .env.example              # Environment template
 ├── .env                      # Environment variables (not in Git)
 ├── package.json
 ├── tsconfig.json
@@ -308,8 +290,7 @@ aws_library_project/
 
 ---
 
-## 🧪 Testing
-
+##  Testing
 ```bash
 # Run tests
 npm test
@@ -328,14 +309,13 @@ npm run format
 
 ---
 
-## 🚀 Deployment
+##  Deployment
 
 ### Automated CI/CD Pipeline
 
 **Trigger:** Every push to `main` branch
 
 **Pipeline Stages:**
-
 1. **Source** - Pull code from GitHub
 2. **Build** - `npm install` + `npm run build`
 3. **Deploy** - Upload to S3 bucket
@@ -343,54 +323,57 @@ npm run format
 **Build Time:** ~3-5 minutes
 
 ### Manual Deployment
-
 ```bash
 # Build
 npm run build
 
-# Deploy to S3
-aws s3 sync dist/ s3://library-app-frontend-hacicakin/ \
+# Deploy to S3 (with correct MIME types)
+aws s3 sync dist/ s3://YOUR-BUCKET-NAME/ \
   --delete \
   --content-type "text/html" \
   --exclude "*" \
   --include "*.html"
 
-aws s3 sync dist/ s3://library-app-frontend-hacicakin/ \
+aws s3 sync dist/ s3://YOUR-BUCKET-NAME/ \
   --delete \
   --content-type "application/javascript" \
   --exclude "*" \
   --include "*.js"
 
-aws s3 sync dist/ s3://library-app-frontend-hacicakin/ \
+aws s3 sync dist/ s3://YOUR-BUCKET-NAME/ \
   --delete \
   --content-type "text/css" \
   --exclude "*" \
   --include "*.css"
 
+aws s3 sync dist/ s3://YOUR-BUCKET-NAME/ \
+  --delete \
+  --exclude "*.html" \
+  --exclude "*.css" \
+  --exclude "*.js"
+
 # Invalidate CloudFront cache
 aws cloudfront create-invalidation \
-  --distribution-id E26MDK9MLK6RED \
+  --distribution-id YOUR-DISTRIBUTION-ID \
   --paths "/*"
 ```
 
 ---
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 ### Skills Developed
-
-✅ **React + TypeScript** - Modern frontend development  
-✅ **AWS Lambda** - Serverless architecture  
-✅ **DynamoDB** - NoSQL database design  
-✅ **API Gateway** - REST API creation  
-✅ **Cognito** - User authentication  
-✅ **Bedrock** - AI/ML integration  
-✅ **S3 + CloudFront** - Static website hosting + CDN  
-✅ **CI/CD** - Automated deployment pipelines  
-✅ **Git/GitHub** - Version control
+ **React + TypeScript** - Modern frontend development  
+ **AWS Lambda** - Serverless architecture  
+ **DynamoDB** - NoSQL database design  
+ **API Gateway** - REST API creation  
+ **Cognito** - User authentication  
+ **Bedrock** - AI/ML integration  
+ **S3 + CloudFront** - Static website hosting + CDN  
+ **CI/CD** - Automated deployment pipelines  
+ **Git/GitHub** - Version control  
 
 ### AWS Services Mastered
-
 - Lambda Functions (11 deployments)
 - DynamoDB (3 tables)
 - API Gateway (REST API)
@@ -404,45 +387,28 @@ aws cloudfront create-invalidation \
 
 ---
 
-## 🐛 Known Issues & Future Improvements
-
-### Potential Enhancements
-
-- [ ] Add book search functionality
-- [ ] Implement pagination for large datasets
-- [ ] Add user profile pages
-- [ ] Email notifications for reviews
-- [ ] Book recommendations based on reading history
-- [ ] Social features (follow users, share lists)
-- [ ] Advanced admin analytics dashboard
-
----
-
-## 👥 Team
+##  Team
 
 **Project Team - CENG413 Software Quality Standards**
 
 ### Team Members & Contributions
 
 **Bercan AYDIN**
-
-- 🤖 **AI Integration & Backend Services**
+-  **AI Integration & Backend Services**
 - Integrated Amazon Bedrock (Claude 3 Haiku) for AI recommendations
 - Built Lambda functions for AI-powered book suggestions
 - Implemented Reviews API (GET, POST)
 - Designed recommendation algorithm with genre-based filtering
 
 **Yunus Emre EKE**
-
-- 🔐 **Authentication & Security Implementation**
+-  **Authentication & Security Implementation**
 - Configured AWS Cognito User Pool
 - Implemented role-based access control (Admin/User groups)
 - Set up IAM policies and permissions
 - Protected API endpoints with Cognito authorizer
 
 **Hacı ÇAKIN**
-
-- 🎨 **Frontend Development & DevOps**
+-  **Frontend Development & DevOps**
 - Built React application with TypeScript
 - Designed responsive UI with Tailwind CSS
 - Created modern landing page with animations
@@ -450,9 +416,9 @@ aws cloudfront create-invalidation \
 - Deployed frontend on S3 + CloudFront CDN
 - Configured auto-deployment from GitHub
 
-**Çağan APAYDIN**
 
-- 🗄️ **Backend Architecture & Database Design**
+**Çağan APAYDIN**
+-  **Backend Architecture & Database Design**
 - Built core AWS Lambda functions (Books, Reading Lists APIs)
 - Designed DynamoDB schema (3 tables)
 - Implemented CRUD operations for Books and Reading Lists
@@ -461,20 +427,14 @@ aws cloudfront create-invalidation \
 
 ---
 
-**Collaboration Tools:**
-
-- Version Control: Git/GitHub
-- Communication: [Your tool - Discord/Slack/Teams]
-- Project Management: [Your tool - Trello/Jira/GitHub Projects]
-
 **Development Period:** December 2025 (4-week intensive)
 
 **Institution:** Istanbul Okan University  
-**Course:** CENG413 - Software Quality Standards
+**Course:** CENG413 - Software Quality Standards  
 
 ---
 
-## 📄 License
+##  License
 
 This project is part of an academic course at Istanbul Okan University.
 
@@ -482,7 +442,7 @@ This project is part of an academic course at Istanbul Okan University.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **AWS Free Tier** - Made this project possible
 - **Amazon Bedrock** - AI recommendations
@@ -492,6 +452,14 @@ This project is part of an academic course at Istanbul Okan University.
 
 ---
 
-**Built with ❤️ using AWS Serverless Architecture**
+##  Support
 
-🚀 **Live Demo:** https://d136xpllx0av0s.cloudfront.net
+For questions about this project:
+- **GitHub Issues:** https://github.com/hcakn/aws_library_project/issues
+- **Live Demo:** https://d136xpllx0av0s.cloudfront.net
+
+---
+
+**Built with  using AWS Serverless Architecture**
+
+**Project Status:** Complete & Deployed
