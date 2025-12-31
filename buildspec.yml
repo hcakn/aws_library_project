@@ -13,6 +13,35 @@ phases:
       - echo Building application...
       - npm run build
 
+  post_build:
+    commands:
+      - echo Uploading to S3 with correct content types...
+      - |
+        cd dist
+        aws s3 sync . s3://library-app-frontend-hacicakin/ \
+          --delete \
+          --content-type "text/html" \
+          --exclude "*" \
+          --include "*.html"
+
+        aws s3 sync . s3://library-app-frontend-hacicakin/ \
+          --delete \
+          --content-type "text/css" \
+          --exclude "*" \
+          --include "*.css"
+
+        aws s3 sync . s3://library-app-frontend-hacicakin/ \
+          --delete \
+          --content-type "application/javascript" \
+          --exclude "*" \
+          --include "*.js"
+
+        aws s3 sync . s3://library-app-frontend-hacicakin/ \
+          --delete \
+          --exclude "*.html" \
+          --exclude "*.css" \
+          --exclude "*.js"
+
 artifacts:
   files:
     - '**/*'
