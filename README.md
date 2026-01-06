@@ -183,9 +183,6 @@ npm run build
 ---
 
 ##  Project Statistics
-
-- **Total Development Time:** ~16 hours (4-week intensive)
-- **Lines of Code:** ~3,500+
 - **Lambda Functions:** 11
 - **DynamoDB Tables:** 3
 - **API Endpoints:** 11
